@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universitty Admit Eligibility Predictor</title>
+    <!-- <link rel="stylesheet" href="{{ url_for("static", filename="css/styles.css") }}"> -->
+    <link rel="stylesheet" href="./static/css/styles.css">
+    <!-- UIkit CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.12/dist/css/uikit.min.css" /> -->
+    <!-- UIkit JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.12/dist/js/uikit.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.12/dist/js/uikit-icons.min.js"></script> -->
+</head>
+<body>
+    <header class="uk-width-1-1">
+        <h1><center> <b> UNIVERSITY ADMIT ELIGIBILITY<br> PREDICTOR SYSTEM</b></center></h1>
+        <h5>Enter your details and get probability of your admission</h5>
+    </header>
+    <section class="uk-flex uk-flex-center uk-padding-large uk-width-1-1">
+        <div class="card uk-padding">
+            
+            <div class="uk-divider-icon"></div>
+            <div class="form">
+                <form action="/predict" method="post">
+                    <div class="label">
+                        <label for="gre"><b>GRE Score</b></label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="gre" id="gre" placeholder="Enter your score between 0 - 360" required/>
+                    </div>
+                    <div class="label">
+                        <label for="toefl"><b>TOEFL Score</b></label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="toefl" id="toefl" placeholder="Enter your TOEFL score between 0 - 120" required/>
+                    </div>
+                    <div class="label">
+                        <label for="rating"><b>University Rating</b></label>
+                    </div>
+                    <div class="input">
+                        <select name="rating" id="rating" required>
+                            <option disabled>select a rating</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="label">
+                        <label for="sop"><b>SOP</b></label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="sop" id="sop" placeholder="Enter your SOP score between 0 - 5" required/>
+                    </div>
+                    <div class="label">
+                        <label for="lor"><b>LOR</b></label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="lor" id="lor" placeholder="Enter your LOR score between 0 - 5" required/>
+                    </div>
+                    <div class="label">
+                        <label for="cgpa"><b>CGPA</b></label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="cgpa" id="cgpa" placeholder="Enter your CGPA score between 0 - 10" required/>
+                    </div>
+                    <div class="label">
+                        <label for="research"><b>Research</b></label>
+                    </div>
+                    <div class="input">
+                        <select name="research" id="research" required>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="btn uk-flex uk-flex-center uk-margin-top">
+                        <input type="submit" value="Predict" />
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+</body>
+<script src={{url_for("static",filename="js/scripts.js")}}></script>
+</html>
